@@ -22,39 +22,37 @@ int main(void){
     }
     
     /* login do medico */
-    login_medico:{
-        printf("Login: ");
-        scanf("%s", login);
-        printf("Senha: ");
-        scanf("%s", senha);
+    
+    printf("Login: ");
+    scanf("%s", login);
+    printf("Senha: ");
+    scanf("%s", senha);
 
-        /* verificacao de login do medico */
-        if(strcmp(login, "medico") == 0 && strcmp(senha, "123") == 0){
-            printf("Login efetuado com sucesso! \n");
-        }else{
-            printf("Login ou senha incorretos! \n");
-            exit(1);
-        }
+    /* verificacao de login do medico */
+    if(strcmp(login, "medico") == 0 && strcmp(senha, "123") == 0){
+        printf("Login efetuado com sucesso! \n");
+    }else{
+        printf("Login ou senha incorretos! \n");
+        exit(1);
     }
 
     /* cadastro do paciente */
-        printf("Nome: ");
-        scanf("%s", nome);
-        printf("CPF: ");
-        scanf("%s", cpf);
-        printf("Telefone: ");
-        scanf("%s", telefone);
-        printf("Endereco: ");
-        scanf("%s", endereco);
-        printf("Data de nascimento: ");
-        scanf("%s", data_nasc);
-        printf("Email: ");
-        scanf("%s", email);
-        printf("Data do diagnostico: ");
-        scanf("%s", data_diag);
-        printf("Comorbidade: ");
-        scanf("%s", comorbidade);
-        
+    printf("Nome: ");
+    scanf("%s", nome);
+    printf("CPF: ");
+    scanf("%s", cpf);
+    printf("Telefone: ");
+    scanf("%s", telefone);
+    printf("Endereco: ");
+    scanf("%s", endereco);
+    printf("Data de nascimento: ");
+    scanf("%s", data_nasc);
+    printf("Email: ");
+    scanf("%s", email);
+    printf("Data do diagnostico: ");
+    scanf("%s", data_diag);
+    printf("Comorbidade: ");
+    scanf("%s", comorbidade);
 
     /* escrita no arquivo */
     fprintf(Ponteiro, "\n\nNome: %s \nCPF: %s \nTelefone: %s \nEndereco: %s \nData de nascimento: %s \nEmail: %s \nData do diagnóstico: %s \nComorbidade: %s \n\n", nome, cpf, telefone, endereco, data_nasc, email, data_diag, comorbidade);

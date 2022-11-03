@@ -6,11 +6,11 @@
 
 /* login e cadastro do paciente */
 
-int main(){
+int main(void){
     /* definicao de ponteiro para o arquivo */
     FILE *Ponteiro;
     /* definicao de variaveis */
-    char nome[50], cpf[11], endereco[50], telefone[11], email[50], senha[50], login[50], senha2[50], login2[50];
+    char nome[50], cpf[11], endereco[50], telefone[11], email[50], senha[50], login[50], data_nasc[10], data_diag[10], comorbidade[50];
 
     /* abertura do arquivo */
     Ponteiro = fopen("cadastro.txt", "a");
@@ -21,44 +21,44 @@ int main(){
         exit(1);
     }
     
-    /* cadastro do paciente */
-    printf("Digite seu nome: ");
-    scanf("%s", nome);
-    printf("Digite seu CPF: ");
-    scanf("%s", cpf);
-    printf("Digite seu endereco: ");
-    scanf("%s", endereco);
-    printf("Digite seu telefone: ");
-    scanf("%s", telefone);
-    printf("Digite seu email: ");
-    scanf("%s", email);
-    printf("Digite seu login: ");
+    /* login do medico */
+    printf("Login: ");
     scanf("%s", login);
-    printf("Digite sua senha: ");
+    printf("Senha: ");
     scanf("%s", senha);
-    printf("Digite seu login novamente: ");
-    scanf("%s", login2);
-    printf("Digite sua senha novamente: ");
-    scanf("%s", senha2);
 
-    /* verificacao de login e senha */
-    if(strcmp(login, login2) == 0 && strcmp(senha, senha2) == 0){
-        printf("Cadastro realizado com sucesso!");
+    /* verificacao de login do medico */
+    if(strcmp(login, "medico") == 0 && strcmp(senha, "123") == 0){
+        printf("Login efetuado com sucesso! \n");
     }else{
-        printf("Login ou senha incorretos!");
+        printf("Login ou senha incorretos! \n");
+        exit(1);
     }
 
+    /* cadastro do paciente */
+    printf("Nome: ");
+    scanf("%s", nome);
+    printf("CPF: ");
+    scanf("%s", cpf);
+    printf("Telefone: ");
+    scanf("%s", telefone);
+    printf("Endereco: ");
+    scanf("%s", endereco);
+    printf("Data de nascimento: ");
+    scanf("%s", data_nasc);
+    printf("Email: ");
+    scanf("%s", email);
+    printf("Data do diagnostico: ");
+    scanf("%s", data_diag);
+    printf("Comorbidade: ");
+    scanf("%s", comorbidade);
+
     /* escrita no arquivo */
-    fprintf(Ponteiro, "Nome: %s CPF: %s Endereco: %s Telefone: %s Email: %s Login: %s Senha: %s Login2: %s Senha2: %s ", nome, cpf, endereco, telefone, email, login, senha, login2, senha2);
+    fprintf(Ponteiro, "\n\nNome: %s \nCPF: %s \nTelefone: %s \nEndereco: %s \nData de nascimento: %s \nEmail: %s \nData do diagnóstico: %s \nComorbidade: %s \n\n", nome, cpf, telefone, endereco, data_nasc, email, data_diag, comorbidade);
 
     /* fechamento do arquivo */
     fclose(Ponteiro);
-    
+    printf("Cadastro finalizado");
+
     return 0;
-
-    /* variavel para armazenar a opcao do menu */
-    int opcao;
-
-    /* variavel para armazenar o retorno da funcao */
-    int retorno;
 }

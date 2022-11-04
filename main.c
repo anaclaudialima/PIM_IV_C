@@ -60,6 +60,12 @@ int main(void){
     /* fechamento do arquivo */
     fclose(Ponteiro);
     printf("Cadastro finalizado");
+  
+    /* constatar pacientes acima de 65 anos com alguma comorbidade e copiar o CEP e a idade em outro arquivo de texto*/
+    printf (%d, idade);
+    if (idade > 65 & comorbidade True) {
+    printf ("CEP" & "idade");
+    }
 
     return 0;
 }
